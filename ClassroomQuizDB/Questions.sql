@@ -1,0 +1,13 @@
+﻿CREATE TABLE [dbo].[Questions]
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+    [TimeLimit] INT NOT NULL, 
+    [A1] NVARCHAR(250) NOT NULL, 
+    [A2] NVARCHAR(250) NOT NULL, 
+    [A3] NVARCHAR(250) NOT NULL, 
+    [A4] NVARCHAR(250) NOT NULL, 
+    [Answer] INT NOT NULL, 
+    [Question] NVARCHAR(250) NOT NULL, 
+    [QuizId] UNIQUEIDENTIFIER NOT NULL, 
+    CONSTRAINT [FK_Questions_Quizzes] FOREIGN KEY ([QuizId]) REFERENCES [Quizzes]([Id])
+)
